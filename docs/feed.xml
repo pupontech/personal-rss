@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My Personal Article Feed</title>
-    <link>https://USERNAME.github.io/REPO</link>
-    <atom:link href="https://USERNAME.github.io/REPO/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://pupontech.github.io/personal-rss</link>
+    <atom:link href="https://pupontech.github.io/personal-rss/feed.xml" rel="self" type="application/rss+xml" />
     <description>Articles I send to myself</description>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Jul 2026 14:53:58 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2026 14:55:02 GMT</lastBuildDate>
 
   </channel>
 </rss>
