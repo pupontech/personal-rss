@@ -39,7 +39,7 @@ function rfc822(date) {
   return new Date(date).toUTCString();
 }
 
-const latestDate = items[0]?.date || new Date().toISOString();
+const latestDate = items[0]?.date || "1970-01-01T00:00:00.000Z";
 
 const rssItems = items
   .map((item) => {
