@@ -80,6 +80,16 @@ const index = `<!doctype html>
     <h1>${xmlEscape(feedTitle)}</h1>
     <p>${xmlEscape(feedDescription)}</p>
     <p><a href="feed.xml">RSS feed</a></p>
+    <p><a href="bookmarklet.html">Install the Send to RSS bookmarklet</a></p>
+    <h2>Ways to add articles</h2>
+    <ol>
+      <li><strong>Bookmarklet:</strong> install it once, then click it on any article page.</li>
+      <li><strong>Ask Hermes:</strong> send <code>add this to RSS: https://...</code>.</li>
+      <li><strong>GitHub issue:</strong> open a new issue with the Add article form.</li>
+      <li><strong>GitHub Actions:</strong> run the workflow manually with URL/title/notes.</li>
+      <li><strong>Email/Telegram/WhatsApp:</strong> possible via an automation bridge; see README.</li>
+    </ol>
+    <h2>Current items</h2>
     <ul>
       ${items
         .map(

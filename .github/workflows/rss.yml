@@ -4,12 +4,26 @@ on:
   issues:
     types: [opened]
   workflow_dispatch:
+    inputs:
+      url:
+        description: Article URL to add
+        required: false
+        type: string
+      title:
+        description: Optional title
+        required: false
+        type: string
+      notes:
+        description: Optional notes
+        required: false
+        type: string
   push:
     branches: [main]
     paths:
       - "items.json"
       - "scripts/**"
       - ".github/workflows/rss.yml"
+      - "docs/bookmarklet.html"
 
 permissions:
   contents: write
@@ -35,6 +49,10 @@ jobs:
       - name: Add issue item to items.json
         if: github.event_name == 'issues'
         run: node scripts/add-issue-item.mjs "$GITHUB_EVENT_PATH"
+
+      - name: Add manually dispatched item to items.json
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.url != ''
+        run: node scripts/add-dispatch-item.mjs "$GITHUB_EVENT_PATH"
 
       - name: Generate RSS feed
         run: node scripts/generate-feed.mjs
