@@ -22,9 +22,11 @@ function getField(body, label) {
   const match = body.match(regex);
   if (!match) return "";
 
-  return match[1]
+  const value = match[1]
     .replace(/<!--[\s\S]*?-->/g, "")
     .trim();
+
+  return value === "_No response_" ? "" : value;
 }
 
 const body = issue.body || "";
